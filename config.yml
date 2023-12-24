@@ -165,19 +165,20 @@ libraries:                       # This is called out once within the config.yml
         horizontal_align: center
         vertical_align: bottom                  # This is a file within PMM's defaults folder
       # see the wiki for how to use local files, folders, URLs, or files from git
-##  url: http://192.168.1.139:7878
-##  token: some random token
-##  quality_profile: HD-1080p
-##  add_missing: true
-##  add_existing: false
-##  upgrade_existing: false
-##  root_folder_path: /movies
-##  monitor: movie
-##  availability: released
-##  tag: PMM
-##  search: false
-##  radarr_path:
-##  plex_path:
+radarr:
+  url: http://192.168.1.139:7878
+  token: some random token
+  quality_profile: HD-1080p
+  add_missing: true
+  add_existing: false
+  upgrade_existing: false
+  root_folder_path: /movies
+  monitor: movie
+  availability: released
+  tag: PMM
+  search: false
+  radarr_path:
+  plex_path:
 
 #playlist_files:
  # - pmm: playlist                # This is a file within PMM's defaults folder

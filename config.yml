@@ -169,7 +169,7 @@ radarr:
   url: http://192.168.1.139:7878
   token: some random token
   quality_profile: HD-1080p
-  add_missing: true
+  add_missing: false
   add_existing: false
   upgrade_existing: false
   root_folder_path: /movies

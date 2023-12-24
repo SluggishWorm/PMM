@@ -173,10 +173,10 @@ radarr:
   add_existing: false
   upgrade_existing: false
   root_folder_path: /movies
-  monitor: movie
+  monitor: true
   availability: released
   tag: PMM
-  search: false
+  search: true
   radarr_path:
   plex_path:
 

@@ -171,24 +171,27 @@ libraries:                       # This is called out once within the config.yml
         horizontal_align: center
         vertical_align: bottom                  # This is a file within PMM's defaults folder
       # see the wiki for how to use local files, folders, URLs, or files from git
+playlist_files:
+- file: config/playlists1.yml
+  libraries: Movies, TV Shows, Animation
 radarr:
   url: http://192.168.1.139:7878
-  token: obfuscated
+  token: <redacted>
   quality_profile: HD-1080p
   add_missing: false
   add_existing: false
   upgrade_existing: false
-  root_folder_path: /movies
+  root_folder_path: /media
   monitor: false
   availability: released
   tag: PMM
-  search: none
+  search: false
   radarr_path:
   plex_path:
   ignore_cache: false
 sonarr:
   url: http://192.168.1.139:8989
-  token: obfuscated
+  token: <redacted>
   quality_profile: HD - 720p/1080p
   add_missing: false
   add_existing: false
@@ -198,17 +201,13 @@ sonarr:
   availability: released
   tag: PMM
   search: false
-  radarr_path:
+  language_profile: English
+  series_type: standard
+  season_folder: true
+  cutoff_search: false
+  sonarr_path:
   plex_path:
   ignore_cache: false
-
-playlist_files: config/playlists1.yml
-  - pmm: playlist # see the wiki for how to use local files, folders, URLs, or files from git
-    template_variables:
-      radarr_add_missing: true
-      libraries: Movies, TV Shows, Animation 
-      
-  
 settings:
   cache: true
   cache_expiration: 60
@@ -250,14 +249,14 @@ settings:
 
 plex:                            # Can be individually specified per library as well; REQUIRED for the script to run
   url: http://192.168.1.139:32400
-  token: obfuscated
+  token: <redacted>
   timeout: 60
   clean_bundles: false
   empty_trash: false
   optimize: false
   db_cache:
 tmdb:                            # REQUIRED for the script to run
-  apikey: obfuscated
+  apikey: <redacted>
   language: en
 
 #trakt:

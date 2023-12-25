@@ -43,12 +43,12 @@ playlists:
     sync_to_users: all
     trakt_list: https://trakt.tv/users/goodevilgenius/lists/star-trek-chronology
     summary: All Star Trek canon in chronological order, as found on thestartrekchronologyproject.blogspot.com. Includes animated series. Will be updated with new shows as they come out. Does not include Kelvinverse movies.
-  ##Star Wars: 
-  ##  sync_mode: sync
-  ##  libraries: Movies, TV Shows, Animation
-  ## sync_to_users: all
-  ##  trakt_list: https://trakt.tv/users/ruben_vw_/lists/star-wars-canon-timeline
-  ##  summary:
+  Star Wars: 
+    sync_mode: sync
+    libraries: Movies, TV Shows, Animation
+    sync_to_users: all
+    trakt_list: https://trakt.tv/users/xrayblaster/lists/star-wars-chronological-order?sort=rank,asc
+    summary: All of Star Wars, in chronological order
   Clonewars:
     sync_mode: sync
     libraries: Movies, TV Shows, Animation
@@ -56,7 +56,7 @@ playlists:
     radarr_add_missing: true
     sonarr_add_missing: true
     trakt_list: https://trakt.tv/users/tomfin46/lists/star-wars-the-clone-wars-chronological-episode-order
-    summary: Star Wars: The Clone Wars, set between Episode II and III, added to the Star Wars universe like nothing else before it. The beloved animated series took us to strange worlds, explored classic characters, and introduced new heroes and villains. Now that the series is complete and available on Netflix, StarWars.com presents an official chronological order of the show’s 121 episodes, as well as the feature film that started it all. Get ready to have a LONG viewing party…
+    summary: The Clone Wars, set between Episode II and III, added to the Star Wars universe like nothing else before it. The beloved animated series took us to strange worlds, explored classic characters, and introduced new heroes and villains. Now that the series is complete and available on Netflix, StarWars.com presents an official chronological order of the show’s 121 episodes, as well as the feature film that started it all. Get ready to have a LONG viewing party…
   Xmen:
     sync_mode: sync
     libraries: Movies, TV Shows, Animation

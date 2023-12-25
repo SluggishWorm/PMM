@@ -259,11 +259,11 @@ tmdb:                            # REQUIRED for the script to run
   apikey: <redacted>
   language: en
 
-#trakt:
- # client_id: ####################
-  #client_secret: ####################
-  #pin:
-  #authorization:
+trakt:
+  client_id: <redacted>
+  client_secret: <redacted>
+  pin: <redacted>
+  authorization:
     # everything below is autofilled by the script
    # access_token:
    # token_type:

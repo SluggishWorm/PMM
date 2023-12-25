@@ -7,6 +7,7 @@ libraries:                       # This is called out once within the config.yml
     - pmm: imdb
     - pmm: director
     - pmm: streaming
+      schedule: weekly(tuesday)
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
     - file: config/Top-10-Films.yml
@@ -47,6 +48,7 @@ libraries:                       # This is called out once within the config.yml
     - pmm: basic                 # This is a file within PMM's defaults folder
     - pmm: imdb
     - pmm: streaming
+      schedule: weekly(wednesday)
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
     - remove_overlays: false     # Set this to true to remove all overlays
@@ -64,6 +66,7 @@ libraries:                       # This is called out once within the config.yml
     - pmm: basic                 # This is a file within PMM's defaults folder
     - pmm: imdb
     - pmm: streaming
+      schedule: weekly(thursday)
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
     - remove_overlays: false     # Set this to true to remove all overlays
@@ -81,6 +84,8 @@ libraries:                       # This is called out once within the config.yml
     - pmm: basic                 # This is a file within PMM's defaults folder
     - pmm: imdb
     - pmm: seasonal
+    - pmm: streaming
+      schedule: weekly(friday)
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
     - remove_overlays: false     # Set this to true to remove all overlays
@@ -98,6 +103,7 @@ libraries:                       # This is called out once within the config.yml
     - pmm: basic                 # This is a file within PMM's defaults folder
     - pmm: imdb
     - pmm: streaming
+      schedule: weekly(monday)
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
     - remove_overlays: false     # Set this to true to remove all overlays
@@ -117,11 +123,11 @@ libraries:                       # This is called out once within the config.yml
     - pmm: director
     - pmm: seasonal
       template_variables:
-       use_seperator: true
-       visible_home: true
-       sync_mode: sync
-       radarr_add_missing_christmas: true
-   - pmm: streaming
+        use_seperator: true
+        visible_home: true
+        sync_mode: sync
+        radarr_add_missing_christmas: true
+    - pmm: streaming
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
     - file: config/Top-10-Films.yml
@@ -167,22 +173,42 @@ libraries:                       # This is called out once within the config.yml
       # see the wiki for how to use local files, folders, URLs, or files from git
 radarr:
   url: http://192.168.1.139:7878
-  token: some random token
+  token: obfuscated
   quality_profile: HD-1080p
   add_missing: false
   add_existing: false
   upgrade_existing: false
   root_folder_path: /movies
-  monitor: true
+  monitor: false
   availability: released
   tag: PMM
-  search: true
+  search: none
   radarr_path:
   plex_path:
+  ignore_cache: false
+sonarr:
+  url: http://192.168.1.139:8989
+  token: obfuscated
+  quality_profile: HD - 720p/1080p
+  add_missing: false
+  add_existing: false
+  upgrade_existing: false
+  root_folder_path: /TV SHows
+  monitor: none
+  availability: released
+  tag: PMM
+  search: false
+  radarr_path:
+  plex_path:
+  ignore_cache: false
 
-#playlist_files:
- # - pmm: playlist                # This is a file within PMM's defaults folder
-  # see the wiki for how to use local files, folders, URLs, or files from git
+playlist_files: config/playlists1.yml
+  - pmm: playlist # see the wiki for how to use local files, folders, URLs, or files from git
+    template_variables:
+      radarr_add_missing: true
+      libraries: Movies, TV Shows, Animation 
+      
+  
 settings:
   cache: true
   cache_expiration: 60
@@ -224,14 +250,14 @@ settings:
 
 plex:                            # Can be individually specified per library as well; REQUIRED for the script to run
   url: http://192.168.1.139:32400
-  token: somerandomtoken
+  token: obfuscated
   timeout: 60
   clean_bundles: false
   empty_trash: false
   optimize: false
   db_cache:
 tmdb:                            # REQUIRED for the script to run
-  apikey: somerandomapi
+  apikey: obfuscated
   language: en
 
 #trakt:

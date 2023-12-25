@@ -1,0 +1,66 @@
+playlists:
+  Marvel Cinematic Universe Chronological Order:
+    sync_mode: sync
+    libraries: Movies, TV Shows
+    sync_to_users: all
+    trakt_list: https://trakt.tv/users/donxy/lists/marvel-cinematic-universe?sort=rank,asc
+    summary: Marvel Cinematic Universe In Chronological Order
+  Christmas Animation Episodes:
+    sync mode: sync
+    libraries: Animation
+    sync_to_users: all
+    sonarr_add_missing: true
+    trakt_list: https://trakt.tv/users/billy-shakes/lists/christmas-cartoon-episodes-and-specials?sort=title,asc
+    summary: Christmas Cartoons And Specials
+  Arrowverse:
+    sync_mode: sync
+    libraries: Movies, TV Shows
+    sync_to_users: all
+    trakt_list: https://trakt.tv/users/donxy/lists/arrowverse
+    summary: This is the simplified list for easy viewing order for Arrowverse!
+  Dcau: 
+    sync_mode: sync
+    libraries: Movies, TV Shows, Animation
+    sync_to_users: all
+    trakt_list: https://trakt.tv/users/donxy/lists/dc-animated-series-universe
+    summary: DC Animated Universe
+  Dragonball: 
+    sync_mode: sync
+    libraries: Movies, TV Shows, Animation
+    sync_to_users: all
+    sonarr_add_missing: true
+    trakt_list: https://trakt.tv/users/grawler/lists/dragon-ball-in-order
+    summary: Dragonball In Viewing Order
+  Pokemon: 
+    sync_mode: sync
+    libraries: Movies, TV Shows, Animation
+    sync_to_users: all
+    trakt_list: https://trakt.tv/users/munch54/lists/pokemon-watching-order
+    summary: A watching order to the Pokémon franchise.
+  Star Trek:   
+    sync_mode: sync
+    libraries: Movies, TV Shows
+    sync_to_users: all
+    trakt_list: https://trakt.tv/users/goodevilgenius/lists/star-trek-chronology
+    summary: All Star Trek canon in chronological order, as found on thestartrekchronologyproject.blogspot.com. Includes animated series. Will be updated with new shows as they come out. Does not include Kelvinverse movies.
+  ##Star Wars: 
+  ##  sync_mode: sync
+  ##  libraries: Movies, TV Shows, Animation
+  ## sync_to_users: all
+  ##  trakt_list: https://trakt.tv/users/ruben_vw_/lists/star-wars-canon-timeline
+  ##  summary:
+  Clonewars:
+    sync_mode: sync
+    libraries: Movies, TV Shows, Animation
+    sync_to_users: all
+    radarr_add_missing: true
+    sonarr_add_missing: true
+    trakt_list: https://trakt.tv/users/tomfin46/lists/star-wars-the-clone-wars-chronological-episode-order
+    summary: Star Wars: The Clone Wars, set between Episode II and III, added to the Star Wars universe like nothing else before it. The beloved animated series took us to strange worlds, explored classic characters, and introduced new heroes and villains. Now that the series is complete and available on Netflix, StarWars.com presents an official chronological order of the show’s 121 episodes, as well as the feature film that started it all. Get ready to have a LONG viewing party…
+  Xmen:
+    sync_mode: sync
+    libraries: Movies, TV Shows, Animation
+    sync_to_users: all
+    radarr_add_missing: true
+    trakt_list: https://trakt.tv/users/heyitsbea/lists/x-men
+    summary: Xmen movies in the right order

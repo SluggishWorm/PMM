@@ -7,7 +7,10 @@ libraries:                       # This is called out once within the config.yml
     - pmm: imdb
     - pmm: director
     - pmm: streaming
-      schedule: weekly(tuesday)
+      schedule: weekly(saturday)
+    - pmm: franchise
+      sync_mode_: append
+    - pmm: universe
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
     - file: config/Top-10-Films.yml
@@ -29,6 +32,9 @@ libraries:                       # This is called out once within the config.yml
     metadata_path:
     - pmm: basic                 # This is a file within PMM's defaults folder
     - pmm: imdb
+    - pmm: franchise
+      sync_mode_: append
+    - pmm: universe
     #- pmm: streaming
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
@@ -48,9 +54,12 @@ libraries:                       # This is called out once within the config.yml
     - pmm: basic                 # This is a file within PMM's defaults folder
     - pmm: imdb
     - pmm: streaming
-      schedule: weekly(wednesday)
+      schedule: weekly(sunday)
+    - pmm: franchise
+      sync_mode_: append
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
+    - file: config/Top-10-Series.yml
     - remove_overlays: false     # Set this to true to remove all overlays
     - pmm: resolution
       template_variables:
@@ -65,10 +74,22 @@ libraries:                       # This is called out once within the config.yml
     metadata_path:
     - pmm: basic                 # This is a file within PMM's defaults folder
     - pmm: imdb
+    - pmm: tautulli
+      template_variables:
+        use_watched: true
+        list_days_popular: 7
+        list_size_popular: 10
+        visible_library_watched: true
+        visible_home_watched: true
+        visible_shared_watched: true
     - pmm: streaming
-      schedule: weekly(thursday)
+      schedule: weekly(monday)
+    - pmm: franchise
+      sync_mode_: append
+    - pmm: universe
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
+    - file: config/Top-10-Series.yml
     - remove_overlays: false     # Set this to true to remove all overlays
     - pmm: resolution
       template_variables:
@@ -83,9 +104,13 @@ libraries:                       # This is called out once within the config.yml
     metadata_path:
     - pmm: basic                 # This is a file within PMM's defaults folder
     - pmm: imdb
+      template_variables:
+       radarr_tag: imdb250
     - pmm: seasonal
+    - pmm: franchise
+      sync_mode_: append
     - pmm: streaming
-      schedule: weekly(friday)
+      schedule: weekly(tuesday)
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
     - remove_overlays: false     # Set this to true to remove all overlays
@@ -103,9 +128,13 @@ libraries:                       # This is called out once within the config.yml
     - pmm: basic                 # This is a file within PMM's defaults folder
     - pmm: imdb
     - pmm: streaming
-      schedule: weekly(monday)
+      schedule: weekly(wednesday)
+    - pmm: franchise
+      sync_mode_: append
+    - pmm: universe
       # see the wiki for how to use local files, folders, URLs, or files from git
     overlay_path:
+    - file: config/Top-10-Series.yml
     - remove_overlays: false     # Set this to true to remove all overlays
     - pmm: resolution
       template_variables:
@@ -120,15 +149,43 @@ libraries:                       # This is called out once within the config.yml
     metadata_path:
     - pmm: basic                 # This is a file within PMM's defaults folder
     - pmm: imdb
-    - pmm: director
+      template_variables:
+        radarr_add_missing: true
+        radarr_tag: imdb250
+    - pmm: tautulli
+      template_variables:
+        use_watched: true
+        list_days_popular: 7
+        list_size_popular: 10
+        visible_library_watched: true
+        visible_home_watched: true
+        visible_shared_watched: true
     - pmm: seasonal
       template_variables:
         use_seperator: true
         visible_home: true
         sync_mode: sync
         radarr_add_missing_christmas: true
+        radarr_add_missing_years: true
+        schedule_christmas: range(12/01-12/26)
+        shecdule_years: range(12/26-01/02)
+    - pmm: franchise
+      template_variables:
+       collection_order: release
+       sync_mode_: append
+    - pmm: universe
     - pmm: streaming
-      # see the wiki for how to use local files, folders, URLs, or files from git
+      schedule: weekly(thursday)
+        # see the wiki for how to use local files, folders, URLs, or files from git
+    collections:
+     Stand Up Comedy:
+      trakt_list: https://trakt.tv/users/giladg/lists/stand-up-comedy?display=movie&sort=added,asc
+      languages: en
+      radarr_add_missing: true
+      radarr_tag: SUC PMM
+      sort_by: released
+      sync_mode: append
+      years: 2010-2025
     overlay_path:
     - file: config/Top-10-Films.yml
     - remove_overlays: false     # Set this to true to remove all overlays
@@ -174,8 +231,12 @@ libraries:                       # This is called out once within the config.yml
 playlist_files:
 - file: config/playlists1.yml
   libraries: Movies, TV Shows, Animation
+  radarr_add_missing: true
+  sonarr_add_missing: true
+  sonarr_tag: PMM
+  radarr_tag: PMM
 radarr:
-  url: http://192.168.1.139:7878
+  url: <redacted>
   token: <redacted>
   quality_profile: HD-1080p
   add_missing: false
@@ -190,7 +251,7 @@ radarr:
   plex_path:
   ignore_cache: false
 sonarr:
-  url: http://192.168.1.139:8989
+  url: <redacted>
   token: <redacted>
   quality_profile: HD - 720p/1080p
   add_missing: false
@@ -208,6 +269,9 @@ sonarr:
   sonarr_path:
   plex_path:
   ignore_cache: false
+tautulli:
+  url: <redacted>
+  apikey: <redacted>
 settings:
   cache: true
   cache_expiration: 60
@@ -247,8 +311,8 @@ settings:
   custom_repo:
   check_nightly: false
 
-plex:                            # Can be individually specified per library as well; REQUIRED for the script to run
-  url: http://192.168.1.139:32400
+plex: # Can be individually specified per library as well; REQUIRED for the script to run
+  url: <redacted>
   token: <redacted>
   timeout: 60
   clean_bundles: false
@@ -259,11 +323,19 @@ tmdb:                            # REQUIRED for the script to run
   apikey: <redacted>
   language: en
 
+  cache_expiration: 60
+  region:
 trakt:
   client_id: <redacted>
   client_secret: <redacted>
-  pin: <redacted>
+  pin:
   authorization:
+    access_token: <redacted>
+    token_type: Bearer
+    expires_in: <redacted>
+    refresh_token: <redacted>
+    scope: <redacted>
+    created_at: <redacted>
     # everything below is autofilled by the script
    # access_token:
    # token_type:

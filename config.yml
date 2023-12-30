@@ -146,20 +146,18 @@ libraries:                       # This is called out once within the config.yml
         vertical_align: bottom                  # This is a file within PMM's defaults folder
       # see the wiki for how to use local files, folders, URLs, or files from git
   Movies:
-    metadata_path:
-     -file: config/MovieCollections.yml
-    - pmm: basic                 # This is a file within PMM's defaults folder
+    - pmm: basic # This is a file within PMM's defaults folder
     - pmm: imdb
       template_variables:
-        radarr_add_missing: true
-        radarr_tag: imdb250
+       radarr_add_missing: true
+       radarr_tag: imdb250
     - pmm: tautulli
       template_variables:
         use_watched: true
         list_days_popular: 7
         list_size_popular: 10
         visible_library_watched: true
-        visible_home_watched: true
+        visible_home_watched: false
         visible_shared_watched: true
     - pmm: seasonal
       template_variables:
@@ -174,20 +172,15 @@ libraries:                       # This is called out once within the config.yml
       template_variables:
        collection_order: release
        sync_mode_: append
+       radarr_add_missing: true
+       radarr_tag: PMMFRANCHISE
     - pmm: universe
     - pmm: streaming
       schedule: weekly(thursday)
         # see the wiki for how to use local files, folders, URLs, or files from git
-    collections:
-     Stand Up Comedy:
-      trakt_list: https://trakt.tv/users/giladg/lists/stand-up-comedy?display=movie&sort=added,asc
-      languages: en
-      radarr_add_missing: true
-      radarr_tag: SUC PMM
-      sort_by: released
-      sync_mode: append
-      years: 2010-2025
-    overlay_path:
+  metadata_path:
+     -file: config/MovieCollections.yml
+  overlay_path:
     - file: config/Top-10-Films.yml
     - remove_overlays: false     # Set this to true to remove all overlays
     - pmm: resolution

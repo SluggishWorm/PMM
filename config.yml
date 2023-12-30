@@ -147,6 +147,7 @@ libraries:                       # This is called out once within the config.yml
       # see the wiki for how to use local files, folders, URLs, or files from git
   Movies:
     metadata_path:
+     -file: config/MovieCollections.yml
     - pmm: basic                 # This is a file within PMM's defaults folder
     - pmm: imdb
       template_variables:

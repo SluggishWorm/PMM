@@ -1,0 +1,8 @@
+Stand Up Comedy:
+      trakt_list: https://trakt.tv/users/giladg/lists/stand-up-comedy?display=movie&sort=added,asc
+      languages: en
+      radarr_add_missing: true
+      radarr_tag: SUC PMM
+      sort_by: released
+      sync_mode: sync
+      years: 2010-2025

@@ -43,6 +43,8 @@ libraries:                       # This is called out once within the config.yml
       template_variables:
         horizontal_align: left
         vertical_align: bottom
+        use_edition: false  
+        builder_level: episode
     - pmm: audio_codec
       template_variables:
         horizontal_align: center
@@ -65,6 +67,8 @@ libraries:                       # This is called out once within the config.yml
       template_variables:
         horizontal_align: left
         vertical_align: bottom
+        use_edition: false  
+        builder_level: episode
     - pmm: audio_codec
       template_variables:
         horizontal_align: center
@@ -79,8 +83,10 @@ libraries:                       # This is called out once within the config.yml
         use_watched: true
         list_days_popular: 7
         list_size_popular: 10
+        list_days_watched: 7
+        list_size_watched: 10
         visible_library_watched: true
-        visible_home_watched: true
+        visible_home_watched: false
         visible_shared_watched: true
     - pmm: streaming
       schedule: weekly(monday)
@@ -95,6 +101,8 @@ libraries:                       # This is called out once within the config.yml
       template_variables:
         horizontal_align: left
         vertical_align: bottom
+        use_edition: false  
+        builder_level: episode
     - pmm: audio_codec
       template_variables:
         horizontal_align: center
@@ -140,12 +148,16 @@ libraries:                       # This is called out once within the config.yml
       template_variables:
         horizontal_align: left
         vertical_align: bottom
+        use_edition: false  
+        builder_level: episode
     - pmm: audio_codec
       template_variables:
         horizontal_align: center
         vertical_align: bottom                  # This is a file within PMM's defaults folder
       # see the wiki for how to use local files, folders, URLs, or files from git
   Movies:
+  metadata_path:
+    - file: config/MovieCollections.yml
     - pmm: basic # This is a file within PMM's defaults folder
     - pmm: imdb
       template_variables:
@@ -156,6 +168,8 @@ libraries:                       # This is called out once within the config.yml
         use_watched: true
         list_days_popular: 7
         list_size_popular: 10
+        list_days_watched: 7
+        list_size_watched: 10
         visible_library_watched: true
         visible_home_watched: false
         visible_shared_watched: true
@@ -175,11 +189,12 @@ libraries:                       # This is called out once within the config.yml
        radarr_add_missing: true
        radarr_tag: PMMFRANCHISE
     - pmm: universe
-    - pmm: streaming
-      schedule: weekly(thursday)
-        # see the wiki for how to use local files, folders, URLs, or files from git
-  metadata_path:
-     -file: config/MovieCollections.yml
+      template_variables:
+       collection_order: release
+       sync_mode_: append
+       radarr_add_missing: true
+       radarr_tag: UniPMM
+    - pmm: streaming        # see the wiki for how to use local files, folders, URLs, or files from git
   overlay_path:
     - file: config/Top-10-Films.yml
     - remove_overlays: false     # Set this to true to remove all overlays
@@ -202,6 +217,8 @@ libraries:                       # This is called out once within the config.yml
       template_variables:
         horizontal_align: left
         vertical_align: bottom
+        use_edition: false  
+        builder_level: episode
     - pmm: audio_codec
       template_variables:
         horizontal_align: center
@@ -217,6 +234,8 @@ libraries:                       # This is called out once within the config.yml
       template_variables:
         horizontal_align: left
         vertical_align: bottom
+        use_edition: false  
+        builder_level: episode
     - pmm: audio_codec
       template_variables:
         horizontal_align: center
@@ -230,8 +249,8 @@ playlist_files:
   sonarr_tag: PMM
   radarr_tag: PMM
 radarr:
-  url: <redacted>
-  token: <redacted>
+  url: http://192.168.1.139:7878
+  token: 6dfe535fff5b4f949e920ad8cbb904d6
   quality_profile: HD-1080p
   add_missing: false
   add_existing: false
@@ -245,8 +264,8 @@ radarr:
   plex_path:
   ignore_cache: false
 sonarr:
-  url: <redacted>
-  token: <redacted>
+  url: http://192.168.1.139:8989
+  token: b0168c9af2eb4ea19ddc913e35596962
   quality_profile: HD - 720p/1080p
   add_missing: false
   add_existing: false
@@ -264,8 +283,8 @@ sonarr:
   plex_path:
   ignore_cache: false
 tautulli:
-  url: <redacted>
-  apikey: <redacted>
+  url: http://192.168.1.139:8181
+  apikey: 5IPQ2tJAKLHSM__LutT8_fsRR5dPPpWh
 settings:
   cache: true
   cache_expiration: 60
@@ -306,30 +325,30 @@ settings:
   check_nightly: false
 
 plex: # Can be individually specified per library as well; REQUIRED for the script to run
-  url: <redacted>
-  token: <redacted>
+  url: http://192.168.1.139:32400
+  token: QyMyYk28RLcXekCYD4Wx
   timeout: 60
   clean_bundles: false
   empty_trash: false
   optimize: false
   db_cache:
 tmdb:                            # REQUIRED for the script to run
-  apikey: <redacted>
+  apikey: 82aa25be2365bf0527e4c4f89a23b801
   language: en
 
   cache_expiration: 60
   region:
 trakt:
-  client_id: <redacted>
-  client_secret: <redacted>
+  client_id: 6113db8a0b8dc475f4010e06d640e633df24a3eae2b18e3eabc7e93be526c8e6
+  client_secret: c92b1554edb2fce0c8495ae0fde9108282b15cf2283ff81f7a6678239a410e54
   pin:
   authorization:
-    access_token: <redacted>
+    access_token: 0b41396db7eb5edaf591692a08c94088fdd2c77a6abca73d58d74ef550f01011
     token_type: Bearer
-    expires_in: <redacted>
-    refresh_token: <redacted>
-    scope: <redacted>
-    created_at: <redacted>
+    expires_in: 7889237
+    refresh_token: fe68fa24312ccc003e676ad388a85ce505e21d18e5b6b2c7c268846f3a9a4761
+    scope: public
+    created_at: 1703480987
     # everything below is autofilled by the script
    # access_token:
    # token_type:
